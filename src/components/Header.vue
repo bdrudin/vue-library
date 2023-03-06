@@ -14,10 +14,10 @@
                     <a class="navbar-brand" href="/">E-Perpustakaan</a>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/login">Masuk</a>
+                            <router-link class="nav-link" :to="{ name: 'login' }">Masuk</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/register">Mendaftar</a>
+                            <router-link class="nav-link" :to="{ name: 'register' }">Mendaftar</router-link>
                         </li>
                     </ul>
                 </div>

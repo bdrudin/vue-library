@@ -1,5 +1,5 @@
 <script setup>
-  import { RouterView } from 'vue-router'
+  import { RouterView, RouterLink } from 'vue-router'
   import Header from './components/Header.vue'
   import Aside from './components/Aside.vue'
   import "bootstrap/dist/css/bootstrap.min.css"
@@ -21,19 +21,19 @@
           <a class="navbar-brand" href="#">E-Perpustakaan</a>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/">Home</a>
+              <router-link class="nav-link" :to="{ name: 'Home' }">Home</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/books">Books</a>
+              <router-link class="nav-link" :to="{ name: 'Books' }">Books</router-link>
             </li>
             <li class="nav-item" v-if="role === 'admin'">
-              <a class="nav-link" href="/books/add">Add Book</a>
+              <router-link class="nav-link" :to="{ name: 'AddBook' }">Add Book</router-link>
             </li>
             <li class="nav-item" >
-              <a class="nav-link" href="/categories">Categories</a>
+              <router-link class="nav-link" :to="{ name: 'Categories' }">Categories</router-link>
             </li>
             <li class="nav-item" v-if="role === 'admin'">
-              <a class="nav-link" href="/categories/add">Add Category</a>
+              <router-link class="nav-link" :to="{ name: 'AddCategory' }">Add Category</router-link>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -81,7 +81,7 @@ export default {
   }
 }
   .content{
-    margin-left: 200px;
+    margin-left: 200px !important;
   }
 
 </style>
